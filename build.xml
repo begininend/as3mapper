@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="as3mapper" default="all">
+  <property file="./build.properties" />
+  <taskdef resource="flexTasks.tasks"
+           classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+  <target name="all">
+    <ant target="library" />
+  </target>
+  <target name="library">
+    <compc output="bin/as3mapper.swc" compiler.strict="true" compiler.optimize="true">
+      <include-sources dir="src" includes="ru/barbuza/mapper/*.as"/>
+    </compc>
+  </target>
+</project>
